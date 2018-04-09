@@ -2,12 +2,14 @@ package com.example.sghadge.librarydemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import com.example.mylibrary.mainClass;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     mainClass mClass;
+    //ViewDialog viewDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mClass=new mainClass(getApplicationContext());
+        //viewDialog=new ViewDialog(MainActivity.this);
+
         //mainClass.RegistrationBroadcastReceiver(getApplicationContext());
         /*mRegistrationBroadcastReceiver = new BroadcastReceiver() {
             @Override
@@ -96,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mClass.Resume();
+        //mClass.Resume();
     }
 
     @Override
     protected void onPause() {
-        mClass.Pause();
+        //mClass.Pause();
         super.onPause();
 
     }

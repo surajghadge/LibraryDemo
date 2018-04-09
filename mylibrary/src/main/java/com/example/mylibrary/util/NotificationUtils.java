@@ -1,6 +1,11 @@
 package com.example.mylibrary.util;
 
 import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -14,10 +19,13 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Patterns;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import com.example.mylibrary.DemoConfig;
 import com.example.mylibrary.R;
@@ -44,6 +52,7 @@ public class NotificationUtils {
     public NotificationUtils(Context mContext) {
         this.mContext = mContext;
     }
+
 
     public void showNotificationMessage(String title, String message, String timeStamp, Intent intent) {
         //showNotificationMessage(title, message, timeStamp, intent, null);

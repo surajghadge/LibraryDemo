@@ -2,15 +2,15 @@ package com.example.mylibrary.service;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.mylibrary.DemoConfig;
+import com.example.mylibrary.activity.CoverActivity;
+import com.example.mylibrary.activity.FooterActivity;
+import com.example.mylibrary.activity.HalfInterstitalActivity;
+import com.example.mylibrary.activity.HeaderActivity;
+import com.example.mylibrary.activity.InterstitialActivity;
 import com.example.mylibrary.mainClass;
 import com.example.mylibrary.util.NotificationUtils;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -72,6 +72,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }*/
 
+
     private void handleDataMessage(JSONObject json) {
         Log.e(TAG, "push json: " + json.toString());
 
@@ -99,14 +100,37 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 pushNotification.putExtra("message", message);
                 LocalBroadcastManager.getInstance(this).sendBroadcast(pushNotification);
 
-                mClass.displayView();
+                /*Intent intent=new Intent(getApplicationContext(), FooterActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);*/
+
+                /*Intent intent=new Intent(getApplicationContext(), HeaderActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);*/
+
+                /*Intent intent=new Intent(getApplicationContext(), InterstitialActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);*/
+
+                Intent intent=new Intent(getApplicationContext(), HalfInterstitalActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+                /*Intent intent=new Intent(getApplicationContext(), CoverActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);*/
+
+
+
+                //viewDialog.showDialog();
+                //mClass.displayView();
                 //Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
                 // play notification sound
                 //NotificationUtils notificationUtils = new NotificationUtils(getApplicationContext());
                 //notificationUtils.playNotificationSound();
             } else {
                 Log.e("app_details",message);
-                Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
                 // app is in background, show the notification in notification tray
                 /*Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
                 resultIntent.putExtra("message", message);*/

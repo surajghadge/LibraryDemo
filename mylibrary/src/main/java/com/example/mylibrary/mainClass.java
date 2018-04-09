@@ -1,25 +1,15 @@
 package com.example.mylibrary;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.drawable.ShapeDrawable;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.mylibrary.activity.DialogActivity;
 import com.example.mylibrary.util.NotificationUtils;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -57,7 +47,7 @@ public class mainClass{
                     // gcm successfully registered
                     // now subscribe to `global` topic to receive app wide notifications
                     FirebaseMessaging.getInstance().subscribeToTopic(DemoConfig.TOPIC_GLOBAL);
-                    //Toast.makeText(context.getApplicationContext(),"onReceive if",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context.getApplicationContext(),"onReceive if",Toast.LENGTH_SHORT).show();
                     displayFirebaseRegId();
 
                 } else if (intent.getAction().equals(DemoConfig.PUSH_NOTIFICATION)) {
@@ -65,7 +55,7 @@ public class mainClass{
                     // new push notification is received
                     String message = intent.getStringExtra("message");
                     Toast.makeText(context.getApplicationContext(), message, Toast.LENGTH_LONG).show();
-                    //Toast.makeText(context.getApplicationContext(),"onReceive else",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context.getApplicationContext(),"onReceive else",Toast.LENGTH_SHORT).show();
                 }
             }
         };

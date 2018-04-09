@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mylibrary.activity.DialogActivity"
-    android:background="#808080">
+    tools:context=".activity.HalfInterstitalActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerVertical="true"
+        android:background="#1638bf"></RelativeLayout>
 
 </RelativeLayout>

@@ -6,15 +6,6 @@
 
     <application>
 
-        <!--
-        <service android:name=".FireIDService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
-        -->
-        <activity android:name=".activity.DialogActivity"></activity>
-
         <!-- Firebase Notifications -->
         <service android:name=".service.MyFirebaseMessagingService">
             <intent-filter>
@@ -28,6 +19,22 @@
         </service>
         <!-- ./Firebase Notifications -->
 
+        <!--Banner Activities-->
+        <activity
+            android:name=".activity.FooterActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".activity.HeaderActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".activity.InterstitialActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".activity.CoverActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".activity.HalfInterstitalActivity"
+            android:theme="@style/Theme.Transparent"/>
     </application>
 
 </manifest>
